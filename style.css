@@ -1,0 +1,251 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: roboto;
+    background: linear-gradient(160deg, rgba(255,0,0,0.7),rgba(0,0,255,0.7));
+}
+
+.padre
+{
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+    padding: 10vh;
+}
+
+
+.form{
+
+    display: flex;
+    flex: 1;
+    /* background-color: rgba(0, 0, 0,.1); */
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cart{
+
+    display: grid;
+    overflow-y: auto;
+    
+    grid-template-columns: .2fr .2fr;
+    grid-template-rows: .2fr .2fr;
+    flex: 2;
+    /* background-color: black; */
+    margin: 5px;
+      justify-content: center;
+     align-items: center;
+
+}
+
+.factura{
+
+    display: flex;
+    flex: 1;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px;
+
+}
+
+
+.campo
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;  */
+    /* align-items: center; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+ 
+    
+    font-weight: bold;
+}
+
+
+
+.window
+{
+    border-radius: 10px;
+    background: linear-gradient(rgba(0,0,0,.0),rgba(0,0,0,.3));
+    backdrop-filter: blur(100px);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), 
+                15px 15px 15px rgba(0, 0, 0, 0.01),  
+                20px 20px 15px rgba(0, 0, 0, 0.01),  
+                30px 30px 15px rgba(0, 0, 0, 0.01),  
+    inset 1px 1px 2px #fff;
+}
+
+
+
+.campo label{
+    font-size: 14px;
+    color: white;
+    margin-left: 10px;
+}
+
+.campo input
+{
+    border: none;
+    height: 30px;
+    transition: 1s;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0,.1);
+    outline: none;
+    border-radius: 5px;
+
+   padding: 8px 25px;
+   margin-bottom: 20px;
+   outline: none;
+   font-size: 1.1em;
+   color: black;
+   background:rgba(0, 0, 0, 0.01);
+   backdrop-filter: blur(5px);
+   color: white;
+   font-weight: bold;
+   transition: 0.4s;
+   
+
+}
+
+.campo input:hover
+{
+    transition: 0.4s;
+    transform: scale(.98);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0,.3);
+    background-color: #fff;
+    color: black;
+
+}
+
+.buton{
+    display: flex;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 15px;
+    outline: none;
+    border: none;
+    height: 40px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: .25s;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+
+.buton:hover{
+    /* transform: translateY(-5px); */
+    background-color: white;
+    color: black;
+}
+
+.buton:active{
+    transform: scale(1.05);
+    background-color: black;
+    color: white;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+}
+
+.itembox{
+    display: flex;
+     justify-content: center;
+     align-items: center;
+    /* background: red; */
+     background: rgba(255,255,255,0.25);
+    margin: 10px;
+    border-radius: 10px;
+    flex-direction: column;
+     color: white;
+}
+
+.itembox .info
+{
+ position: absolute;   
+ /* top: -20px;
+ left: -20px; */
+ background-color: rgba(255,255,255,0.2);
+ backdrop-filter: blur(100px);
+ border-radius: 25px 25px 25px 25px;
+ opacity: 0;
+ transition: 0.5s;
+ padding: 20px;
+ font-size: 12px;
+ color: black;
+
+ 
+}
+
+.itembox:hover > .info
+{ 
+ /* position: absolute;    */
+ background-color: rgba(255,255,255,0.5);
+ backdrop-filter: blur(100px);
+ opacity: 1;
+}
+
+
+@media (max-width: 900px) {
+
+.padre
+{
+
+    display: flex;
+    flex-direction: column;
+    height: 200vh;
+    padding: 10vh;
+}
+
+.form{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+}
+
+
+
+*::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+*::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+*::-webkit-scrollbar-button:increment,*::-webkit-scrollbar-button {
+    display: none;
+} 
+
+*::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid white
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+#Empty{
+    color: white;
+    transform: scale(5);
+}

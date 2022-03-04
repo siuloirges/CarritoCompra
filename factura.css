@@ -1,0 +1,37 @@
+/* 
+.factura{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: #62baea;
+}
+
+.factura::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    background: 
+     
+     linear-gradient(-135deg ,#fff 12px, transparent 0% ),
+     linear-gradient(135deg ,#fff 12px, transparent 0% );
+
+    background-size: 24px;
+}
+
+.factura::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    background: 
+     
+     linear-gradient(-45deg ,#fff 12px, transparent 0% ),
+     linear-gradient(45deg ,#fff 12px, transparent 0% );
+
+    background-size: 24px;
+} */
