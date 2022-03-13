@@ -25,48 +25,90 @@ function annadirAlCarrito(){
 
     let producto = document.getElementById('cart');
     producto.innerHTML += `  
+
     <div class="itembox">
         <div id="box">
             <div class="top"></div>
             <div>
+
                 <span></span>
                 <span>
                     <i class="tape"></i>
                 </span>
-                <span style="--i:Hola Mundo"></span>
+                <span style=""></span>
                 <span>
                     <i class="tape"></i>
                 </span>
+
+                <div class="infotape">
+                    <div class="infoProduct" >
+                        <h4>Nombre: `+nombre+`</h4>
+                        <P>Precio:  `+numberFormat2.format(precio)+`</P>
+                        <P>Cantidad: `+cantidad+`</P>
+                        <P>Iva:  `+iva+`%</P>
+                        <P>Descuento:  `+descuento+`%</P>
+                    </div>
+                </dvi>
+
+
+
+
             </div>
-        
+
+
         </div>
         
-        <div class="info">
-                <h4>Nombre: `+nombre+`</h4>
-                <P>Precio:  `+numberFormat2.format(precio)+`</P>
-                <P>Cantidad: `+cantidad+`</P>
-                <P>Iva:  `+iva+`%</P>
-                <P>Descuento:  `+descuento+`%</P>
-        </div>
+  
         
-        <h4>Nombre: `+nombre+`</h4>
-    </div>
+    
+
+        
+
+    </div>    
+    <h4>`+nombre+`</h4>
     `;
+
+    document.getElementById('nombre').value = '';
+    document.getElementById('precio').value = '';
+    document.getElementById('cantidad').value = '';
+    document.getElementById('iva').value = '';
+    document.getElementById('descuento').value = '';
 
 }
 
 function calcularFactura(){
-    let precioTotal = 0;
-    let cantidadTotal = 0;
-    listProductos.forEach((currentValue) => {
+
+    Swal.fire({
+        title: 'Espere porfavor',
+        html: '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>',
+        imageAlt: 'Custom image',
+        showConfirmButton: false,
+    });
+
+    setTimeout(() => {
+        location.replace('procesarCompraController.php?lista='+JSON.stringify(listProductos));      
+    }, 2000);
+
+
+//  <div class="info" >
+//     <h4>Nombre: `+nombre+`</h4>
+//     <P>Precio:  `+numberFormat2.format(precio)+`</P>
+//     <P>Cantidad: `+cantidad+`</P>
+//     <P>Iva:  `+iva+`%</P>
+//     <P>Descuento:  `+descuento+`%</P>
+// </div> 
+    
+    // let precioTotal = 0;
+    // let cantidadTotal = 0;
+    // listProductos.forEach((currentValue) => {
             
-        precioTotal += currentValue.precio * currentValue.cantidad;
-        cantidadTotal += currentValue.cantidad;
+    //     precioTotal += currentValue.precio * currentValue.cantidad;
+    //     cantidadTotal += currentValue.cantidad;
 
-    })
+    // })
 
-    let producto = document.getElementById('factura');
-    producto.innerHTML = ` <h3>Precio Total: $`+ (precioTotal) +`</h3> `+ ` <h3>Cantidad Total: `+ cantidadTotal +`</h3>`+ ` <h3>Precio con Iva: `+ cantidadTotal + (cantidadTotal*0.19) +`</h3>`;
+    // let producto = document.getElementById('factura');
+    // producto.innerHTML = ` <h3>Precio Total: $`+ (precioTotal) +`</h3> `+ ` <h3>Cantidad Total: `+ cantidadTotal +`</h3>`+ ` <h3>Precio con Iva: `+ cantidadTotal + (cantidadTotal*0.19) +`</h3>`;
 }
 
 
